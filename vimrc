@@ -1,9 +1,10 @@
 set expandtab
 set ts=4
 set autoindent
-set paste
 
 let mapleader=' '
+
+let g:auto_save = 1  " enable AutoSave on Vim startup
 
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>ev :w<CR>:e $MYVIMRC<CR>
@@ -12,6 +13,9 @@ nnoremap <leader>vv :w<CR>:bdelete<CR>:source $MYVIMRC<CR>
 
 call plug#begin()
 Plug 'scrooloose/nerdtree'
+Plug 'git@github.com:PeterRincker/vim-argumentative.git'
+Plug 'git@github.com:vim-scripts/vim-auto-save.git'
+Plug 'git://github.com/jiangmiao/auto-pairs.git'
 call plug#end()
 
 
