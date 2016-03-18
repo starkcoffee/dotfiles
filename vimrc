@@ -1,6 +1,7 @@
 set expandtab
-set ts=4
-set autoindent
+set ts=2
+set sw=2
+set ai
 
 let mapleader=' '
 
@@ -12,7 +13,8 @@ nnoremap <leader>ev :w<CR>:e $MYVIMRC<CR>
 nnoremap <leader>sv :w<CR>:source $MYVIMRC<CR>
 nnoremap <leader>vv :w<CR>:bdelete<CR>:source $MYVIMRC<CR>
 
-nnoremap <c-o> :CtrlPMRUFiles<CR>
+nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>b :CtrlPMRUFiles<CR>
 
 call plug#begin()
 Plug 'scrooloose/nerdtree'
