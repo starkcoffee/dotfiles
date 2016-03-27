@@ -15,6 +15,7 @@ nnoremap <leader>vv :w<CR>:bdelete<CR>:source $MYVIMRC<CR>
 
 nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>b :CtrlPMRUFiles<CR>
+inoremap <leader>[ [ ] 
 
 call plug#begin()
 Plug 'scrooloose/nerdtree'
