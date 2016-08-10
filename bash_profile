@@ -9,6 +9,8 @@ alias gpr="git pull --rebase"
 alias gd="git difftool -y --tool=vimdiff"
 alias screen_with_name="screen -S"
 alias screen_join="screen -r"
+alias kubectl="artifact-manager deploy kubectl"
+alias yolo='(git symbolic-ref HEAD | grep -vq master && cowthink -f stegosaurus "#YOLO" && git push --force-with-lease) || cowthink -f beavis.zen "You tried to push master, fool."'
 
 
 ppjson () {
@@ -84,8 +86,8 @@ export ANDROID_HOME=$ANDROID_HOME
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export ANDROID_SDK_HOME=$ANDROID_HOME
 
-# I downloaded and installed ANDROID NDK from http://developer.android.com/ndk/downloads/index.html
-export ANDROID_NDK=/usr/local/opt/android-ndk-r10e/
+# from `brew install android-ndk`
+export ANDROID_NDK=/usr/local/opt/android-ndk
 
 # this is for v2 development
 export NODE_ENV=development
@@ -96,3 +98,10 @@ export NVM_DIR="/Users/duana/.nvm"
 
 # init docker
 eval "$(docker-machine env default)"
+alias restart_docker="eval $(docker-machine env)"
+
+# Add GHC 7.10.3 to the PATH, via https://ghcformacosx.github.io/
+export GHC_DOT_APP="/Applications/ghc-7.10.3.app"
+if [ -d "$GHC_DOT_APP"  ]; then
+    export PATH="${HOME}/.local/bin:${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
+fi
