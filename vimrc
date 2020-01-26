@@ -9,6 +9,7 @@ set ai
 let mapleader=' '
 let maplocalleader=','
 let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
@@ -29,12 +30,9 @@ endfunction
 let g:vimroom_guibackground='white'
 let g:auto_save_silent = 1
 
-" quick escape out of insert mode
-inoremap jk <esc>
-inoremap <esc> <nop>
-
 " task editing stuffs
 inoremap <c-t>[ [ ] 
-inoremap <c-t>p 🥳 YAYAYAYAYA!!
+inoremap <c-t>p 🎉 YAYAYAYAYA!!
 nnoremap <c-t>d :s/\[ \]/\[x\]/<CR>:echo "GOOD JOB!!"<CR>
 
+nnoremap <localleader>d :,w >> done<CR>dd<CR>
