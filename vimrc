@@ -5,6 +5,7 @@ set expandtab
 set ts=2
 set sw=2
 set ai
+set nobackup
 
 let mapleader=' '
 let maplocalleader=','
@@ -15,8 +16,6 @@ nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>b :CtrlPMRUFiles<CR>
-
-set tags=.git/tags;tags
 
 " https://ricostacruz.com/til/repeat-tmux-from-vim
 " Repeat last command in the next tmux pane.
