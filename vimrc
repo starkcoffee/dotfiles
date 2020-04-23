@@ -35,3 +35,17 @@ inoremap <c-t>p 🎉 YAYAYAYAYA!!
 nnoremap <c-t>d :s/\[ \]/\[x\]/<CR>:echo "GOOD JOB!!"<CR>
 
 nnoremap <localleader>d :,w >> done<CR>dd<CR>
+
+function! QuickFix_toggle()
+    for i in range(1, winnr('$'))
+        let bnum = winbufnr(i)
+        if getbufvar(bnum, '&buftype') == 'quickfix'
+            cclose
+            return
+        endif
+    endfor
+
+    copen
+endfunction
+
+nnoremap <silent> qq :call QuickFix_toggle()<cr>
